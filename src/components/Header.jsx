@@ -63,7 +63,6 @@ const Header = () => {
                 <span className="sr-only">Search icon</span>
               </div>
               <input
-              onChange={handleSearch}
                 type="text"
                 id="search-navbar"
                 className="block w-full p-2 ps-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
