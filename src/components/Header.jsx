@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
+
 
 
 const Header = () => {
+  
   return (
     <>
-      <nav className=" border-red-600 ">
+      <nav className=" border-red-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a
             href="/"
@@ -61,6 +63,7 @@ const Header = () => {
                 <span className="sr-only">Search icon</span>
               </div>
               <input
+              onChange={handleSearch}
                 type="text"
                 id="search-navbar"
                 className="block w-full p-2 ps-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
@@ -125,7 +128,7 @@ const Header = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-red-600 md:p-0"
+                  className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-red-600 md:p-0 transition-colors duration-300"
                   aria-current="page"
                 >
                   Home
@@ -134,9 +137,9 @@ const Header = () => {
               <li>
                 <a
                   href="#"
-                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-600 md:p-0 "
+                  className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-600 md:p-0 transition-colors duration-300"
                 >
-                  About
+                  Favourites
                 </a>
               </li>
             </ul>

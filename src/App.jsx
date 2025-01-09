@@ -7,14 +7,16 @@ import Favourites from "./pages/Favourites";
 function App() {
   return (
     <>
+      <div className="min-h-screen flex flex-col">
       <Header />
-      <main>
+      <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/app" element= {<Favourites/>} />
+          <Route path="/app" element={<Favourites />} />
         </Routes>
       </main>
       <Footer />
+    </div>
     </>
   );
 }
