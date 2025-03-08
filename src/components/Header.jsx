@@ -1,5 +1,4 @@
-import React, { useState } from "react";
-
+import { Link } from "react-router-dom";
 
 
 const Header = () => {
@@ -8,15 +7,15 @@ const Header = () => {
     <>
       <nav className=" border-red-600">
         <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
             <i className="fas fa-utensils text-xl text-red-600 "></i>
             <h2 className="self-center text-2xl font-semibold text-gray-700">
               Recipe<span className="text-red-600">Nest</span>
             </h2>
-          </a>
+          </Link>
 
           <div className="flex md:order-2">
             <button
@@ -125,21 +124,21 @@ const Header = () => {
             </div>
             <ul className="flex flex-col p-4 md:p-0 mt-4 font-medium border border-gray-100 rounded-lg  md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 ">
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/"
                   className="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-red-600 md:p-0 transition-colors duration-300"
                   aria-current="page"
                 >
                   Home
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/favourite"
                   className="block py-2 px-3 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-red-600 md:p-0 transition-colors duration-300"
                 >
                   Favourites
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
