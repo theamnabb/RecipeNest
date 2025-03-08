@@ -12,7 +12,7 @@ function App() {
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/app" element={<Favourites />} />
+          <Route path="/favourite" element={<Favourites />} />
         </Routes>
       </main>
       <Footer />
