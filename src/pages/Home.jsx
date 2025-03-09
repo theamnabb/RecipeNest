@@ -1,5 +1,6 @@
 import React from "react";
-import FryingPan from "../components/FryingPan";
+import FryingPan from "../components/FryingPan/FryingPan";
+import Recipe from "../components/Recipe";
 
 const Home = () => {
   return (
@@ -8,11 +9,7 @@ const Home = () => {
         Nothing to show, please search something!
       </p>
       <FryingPan /> */}
-
-      {/* Receipe Card */}
-      <div className="">
-        <div></div>
-      </div>
+      <Recipe/>
     </>
   );
 };
