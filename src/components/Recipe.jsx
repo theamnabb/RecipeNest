@@ -6,7 +6,7 @@ const Recipe = () => {
     <div className="min-h-screen  p-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          {/* Mountain Card */}
+          {/* Recipe Card */}
           <div className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105">
             <img
               className="w-full h-48 object-cover"
@@ -21,8 +21,8 @@ const Recipe = () => {
                 Discover the majestic beauty of nature with our guided mountain
                 tours.
               </p>
-              <button className="inline-flex items-center px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 cursor-pointer transition duration-300 ease-in-out">
-                Explore More
+              <button className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer transition duration-300 ease-in-out">
+                View Recipe
                 <ArrowRight className="ml-2 h-4 w-4" />
               </button>
             </div>
