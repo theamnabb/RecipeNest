@@ -61,6 +61,7 @@ const Header = () => {
                 </svg>
                 <span className="sr-only">Search icon</span>
               </div>
+              {/* Search Input */}
               <input
                 type="text"
                 id="search-navbar"
