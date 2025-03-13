@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 
 const Header = () => {
-  
+  const [query, setQuery] = useState(""); //Input value
+
+  // Function to handle input change
+  const handleInputChange = (e) => {
+    setQuery(e.target.value);
+    console.log(e.target.value);
+  }; 
   return (
     <>
       <nav className=" border-red-600">
@@ -67,6 +74,7 @@ const Header = () => {
                 id="search-navbar"
                 className="block w-full p-2 ps-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
                 placeholder="Search..."
+                onChange={handleInputChange}
               />
             </div>
             <button
