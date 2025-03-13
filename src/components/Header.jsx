@@ -9,7 +9,8 @@ const Header = () => {
   const handleInputChange = (e) => {
     setQuery(e.target.value);
     console.log(e.target.value);
-  }; 
+    
+  };
   return (
     <>
       <nav className=" border-red-600">
