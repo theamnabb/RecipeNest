@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -8,9 +8,14 @@ const Header = () => {
   // Function to handle input change
   const handleInputChange = (e) => {
     setQuery(e.target.value);
-    console.log(e.target.value);
-    
   };
+
+  // Fetch data based on the query input 
+  useEffect(()=>{
+    if(query){
+      fetch(``)
+    }
+  },[])
   return (
     <>
       <nav className=" border-red-600">
