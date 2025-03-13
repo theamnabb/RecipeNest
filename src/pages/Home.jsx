@@ -5,10 +5,10 @@ import Recipe from "../components/Recipe";
 const Home = ({query}) => {
   return (
     <>
-      {/* <p className="lg:text-4xl text-xl text-center text-red-300 font-semibold mt-6">
+      <p className="lg:text-4xl text-xl text-center text-red-300 font-semibold mt-6">
         Nothing to show, please search something!
       </p>
-      <FryingPan /> */}
+      <FryingPan />
       <Recipe/>
     </>
   );
