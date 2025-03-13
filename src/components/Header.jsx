@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 
 const Header = () => {
-  const [query, setQuery] = useState(""); //Input value
+  const [query, setQuery] = useState(""); //Input value | Local state to capture user input
 
   // Function to handle input change
   const handleInputChange = (e) => {
