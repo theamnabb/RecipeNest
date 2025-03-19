@@ -1,28 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import FryingPan from "../components/FryingPan/FryingPan";
 import Recipe from "../components/Recipe";
 
-const Home = ({}) => {
-  // Store user input query
-  const [query, setQuery] = useState("");
-  // Store GitHub user data
-  const [userData, setUserData] = useState(null);
+const Home = () => {
+  const [query, setQuery] = useState(""); // User input
+  const [recipes, setRecipes] = useState([]); // Store recipe data
 
-  // // Handle input change
+  // Handle input change
   const handleChange = (e) => {
     setQuery(e.target.value);
   };
 
-  // Fetch GitHub user data
+  // Fetch recipe data
   const fetchData = () => {
     if (!query.trim()) {
-      setUserData(null);
+      setRecipes([]);
       return;
     }
 
-    fetch(`https://api.github.com/users/${query}`)
+    fetch(`https://forkify-api.herokuapp.com/api/v2/recipes?search=${query}`)
       .then((res) => res.json())
-      .then((data) => setUserData(data));
+      .then((data) => {
+        if (data?.data?.recipes?.length) {
+          setRecipes(data.data.recipes);
+        } else {
+          setRecipes([]);
+        }
+      });
   };
 
   // Handle Enter key press
@@ -35,11 +39,11 @@ const Home = ({}) => {
   return (
     <>
       {/* Search Input */}
-      <div className="relative flex justify-center items-center mx-5 md:m-0">
+      <div className="relative flex justify-center items-center mx-5 md:m-0 mt-6">
         <input
           type="text"
           className="w-[500px] p-2 ps-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
-          placeholder="Search..."
+          placeholder="Search Recipe..."
           onChange={handleChange}
           value={query}
           onKeyDown={handleKeyPress} // Enter key to search
@@ -50,18 +54,21 @@ const Home = ({}) => {
         ></i>
       </div>
 
-      {/* Diplay User Data */}
-      {userData && <Recipe user={userData} />}
-
-      {/* Frying Pan */}
-      {!userData && !query && (
-        <div className="text-center mt-6">
-          <p className="lg:text-4xl text-xl text-red-300 font-semibold">
-            Nothing to show, please search something!
-          </p>
-          <FryingPan />
-        </div>
-      )}
+      {/* Display Recipes */}
+      <div className="flex justify-center mt-6">
+        {recipes.length > 0 ? (
+          <Recipe recipes={recipes} />
+        ) : query ? (
+          <p className="text-red-500 text-center">No recipes found</p>
+        ) : (
+          <div className="text-center mt-6">
+            <p className="lg:text-4xl text-xl text-red-300 font-semibold">
+              Nothing to show, please search something!
+            </p>
+            <FryingPan />
+          </div>
+        )}
+      </div>
     </>
   );
 };
