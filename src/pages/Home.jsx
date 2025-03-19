@@ -26,6 +26,7 @@ const Home = () => {
         } else {
           setRecipes([]);
         }
+        setQuery("");
       });
   };
 
@@ -33,6 +34,7 @@ const Home = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       fetchData();
+      
     }
   };
 
