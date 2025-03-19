@@ -62,7 +62,7 @@ const Home = () => {
         {recipes.length > 0 ? (
           <Recipe recipes={recipes} />
         ) : query ? (
-          <p className="text-red-500 text-center">No recipes found</p>
+          <p className="lg:text-4xl text-xl text-red-300 font-semibold">No recipes found</p>
         ) : (
           <div className="text-center mt-6">
             <p className="lg:text-4xl text-xl text-red-300 font-semibold">
