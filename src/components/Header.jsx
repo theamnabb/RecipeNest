@@ -10,9 +10,9 @@ const Header = () => {
             to="/"
             className="flex items-center space-x-3 rtl:space-x-reverse"
           >
-            <i className="fas fa-utensils text-xl text-red-600 "></i>
+            <i className="fas fa-utensils text-xl text-red-500 "></i>
             <h2 className="self-center text-2xl font-semibold text-gray-700">
-              Recipe<span className="text-red-600">Nest</span>
+              Recipe<span className="text-red-500">Nest</span>
             </h2>
           </Link>
 
@@ -24,7 +24,7 @@ const Header = () => {
               <li>
                 <Link
                   to="/"
-                  className="block py-2 px-3  rounded md:bg-transparent text-red-600 md:p-0 transition-colors duration-300"
+                  className="block py-2 px-3  rounded md:bg-transparent text-red-500 md:p-0 transition-colors duration-300"
                   aria-current="page"
                 >
                   Home
