@@ -34,26 +34,27 @@ const Home = () => {
   const handleKeyPress = (e) => {
     if (e.key === "Enter") {
       fetchData();
-      
     }
   };
 
   return (
     <>
       {/* Search Input */}
-      <div className="relative flex justify-center items-center mx-5 md:m-0 mt-6">
-        <input
-          type="text"
-          className="w-[500px] p-2 ps-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
-          placeholder="Search Recipe..."
-          onChange={handleChange}
-          value={query}
-          onKeyDown={handleKeyPress} // Enter key to search
-        />
-        <i
-          className="fa fa-search absolute left-4 md:left-37 lg:left-1/3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
-          onClick={fetchData} // Click to search
-        ></i>
+      <div className="relative flex justify-center items-center mx-5 md:m-0">
+        <div className="relative w-[500px]">
+          <input
+            type="text"
+            className="w-full p-2 pl-10 text-sm text-gray-900 shadow-lg border border-red-100 rounded-full bg-gray-50 focus:outline-none focus:ring-1 focus:ring-red-600"
+            placeholder="Search Recipe..."
+            onChange={handleChange}
+            value={query}
+            onKeyDown={handleKeyPress} // Enter key to search
+          />
+          <i
+            className="fa fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer"
+            onClick={fetchData} // Click to search
+          ></i>
+        </div>
       </div>
 
       {/* Display Recipes */}
