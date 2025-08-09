@@ -5,7 +5,9 @@ const Favourites = ({ favorites = [], removeFromFavorites }) => {
   const navigate = useNavigate();
 
   if (favorites.length === 0) {
-    return <p className="p-6 text-center text-gray-600">No favorites added yet.</p>;
+    return <p className="lg:text-4xl text-xl text-center text-red-300 font-semibold mt-15 md:mt-45">
+              No favorites added yet!
+            </p>
   }
 
   return (
