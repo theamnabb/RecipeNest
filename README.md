@@ -6,7 +6,7 @@ Recipe Nest is a user-friendly web application designed to help food lovers disc
 
 Explore the live application here: [RecipeNest](https://recipe-nest-xi.vercel.app/)
 
-
+![](./src/demo.png)
 ## Features
 
 - **Browse Recipes:** Explore a wide variety of recipes from different cuisines and categories.
