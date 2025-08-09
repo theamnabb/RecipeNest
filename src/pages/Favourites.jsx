@@ -9,24 +9,31 @@ const Favourites = ({ favorites = [] }) => {
   }
 
   return (
-    <div className="p-6 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-      {favorites.map((recipe) => (
-        <div
-          key={recipe.id}
-          className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer"
-          onClick={() => navigate(`/recipe/${recipe.id}`)}
-        >
-          <img
-            className="w-full h-48 object-cover"
-            src={recipe.image_url}
-            alt={recipe.title}
-          />
-          <div className="p-6">
-            <h2 className="text-2xl font-bold text-gray-800 mb-3">{recipe.title}</h2>
-            <p className="text-gray-600 mb-4">By {recipe.publisher}</p>
+    <div className="p-6 max-w-7xl mx-auto">
+      {/* Display favorites count */}
+      <h1 className="text-3xl font-bold mb-6">
+        Favorites ({favorites.length})
+      </h1>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {favorites.map((recipe) => (
+          <div
+            key={recipe.id}
+            className="bg-white rounded-xl overflow-hidden shadow-lg transform transition duration-500 hover:scale-105 cursor-pointer"
+            onClick={() => navigate(`/recipe/${recipe.id}`)}
+          >
+            <img
+              className="w-full h-48 object-cover"
+              src={recipe.image_url}
+              alt={recipe.title}
+            />
+            <div className="p-6">
+              <h2 className="text-2xl font-bold text-gray-800 mb-3">{recipe.title}</h2>
+              <p className="text-gray-600 mb-4">By {recipe.publisher}</p>
+            </div>
           </div>
-        </div>
-      ))}
+        ))}
+      </div>
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Routes, Route } from "react-router-dom"; // NO BrowserRouter here
+import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./pages/Home";
@@ -25,8 +25,8 @@ function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Header />
+    <>
+      <Header favorites={favorites} />
       <main className="flex-grow">
         <Routes>
           <Route path="/" element={<Home addToFavorites={addToFavorites} />} />
@@ -41,7 +41,7 @@ function App() {
         </Routes>
       </main>
       <Footer />
-    </div>
+    </>
   );
 }
 
