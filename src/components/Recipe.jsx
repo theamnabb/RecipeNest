@@ -1,7 +1,10 @@
 import React from "react";
 import { ArrowRight } from "lucide-react";
+import { useNavigate } from "react-router-dom";
 
-const Recipe = ({ recipes }) => {
+const Recipe = ({ recipes = [] }) => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen p-8">
       <div className="max-w-7xl mx-auto">
@@ -21,15 +24,13 @@ const Recipe = ({ recipes }) => {
                   {recipe.title}
                 </h2>
                 <p className="text-gray-600 mb-4">By {recipe.publisher}</p>
-                <a
-                  href={recipe.source_url}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  onClick={() => navigate(`/recipe/${recipe.id}`)}
                   className="inline-flex items-center px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 cursor-pointer transition duration-300 ease-in-out"
                 >
                   View Recipe
                   <ArrowRight className="ml-2 h-4 w-4" />
-                </a>
+                </button>
               </div>
             </div>
           ))}
