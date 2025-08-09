@@ -33,7 +33,7 @@ const RecipeDetail = ({ addToFavorites }) => {
 
       <button
         onClick={() => addToFavorites(recipe)}
-        className="mt-6 px-4 py-2 bg-yellow-500 rounded hover:bg-yellow-600 transition"
+        className="mt-6 px-4 py-2 bg-yellow-500 rounded hover:bg-yellow-600 transition cursor-pointer"
       >
         Add to Favorites
       </button>
