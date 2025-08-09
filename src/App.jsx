@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -24,8 +24,14 @@ function App() {
     localStorage.setItem("favorites", JSON.stringify(updated));
   };
 
+  const removeFromFavorites = (id) => {
+    const updated = favorites.filter((fav) => fav.id !== id);
+    setFavorites(updated);
+    localStorage.setItem("favorites", JSON.stringify(updated));
+  };
+
   return (
-    <>
+    <div className="min-h-screen flex flex-col">
       <Header favorites={favorites} />
       <main className="flex-grow">
         <Routes>
@@ -36,12 +42,12 @@ function App() {
           />
           <Route
             path="/favourite"
-            element={<Favourites favorites={favorites} />}
+            element={<Favourites favorites={favorites} removeFromFavorites={removeFromFavorites} />}
           />
         </Routes>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
